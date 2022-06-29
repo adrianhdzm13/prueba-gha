@@ -7,11 +7,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: build and push to docker
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@v2
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: ${{ github.repository }}
+        repository: ${{ udemy-devops }}
         tag_with_ref: true
         tag_with_sha: true
         tags: ${{ github.sha }}
